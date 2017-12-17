@@ -1,0 +1,18 @@
+{% extends "Movie/base.html" %}
+
+{% block title %}Movielist{% endblock %}
+{% block content %}
+<div style="text-align:left">
+    {% if all_movies %}
+    <h3>List of movies in the movie database</h3>
+    <ul>
+        {% for movie in all_movies %}
+        <li><a href="/movielist/{{ movie.id }}/"><b>{{ movie.name }}</b> - {{ movie.director.name }}</a>
+        </li>
+        {% endfor %}
+    </ul>
+    {% else %}
+    <h3>You don't have any books in the database.</h3>
+    {% endif %}
+</div>
+{% endblock %}

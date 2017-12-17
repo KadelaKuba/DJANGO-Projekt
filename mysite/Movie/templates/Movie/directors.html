@@ -1,0 +1,18 @@
+{% extends "Movie/base.html" %}
+
+{% block title %}All directors{% endblock %}
+{% block content %}
+<div style="text-align:left">
+    {% if all_directors %}
+    <h3>List of authors</h3>
+    <ul>
+        {% for director in all_directors %}
+        <li><a href="/directors/{{ director.id }}/">{{ director.name }}</a></li>
+        {% endfor %}
+    </ul>
+    {% else %}
+    <h3>You don't have any authors in the database.</h3>
+    {% endif %}
+</div>
+
+{% endblock %}

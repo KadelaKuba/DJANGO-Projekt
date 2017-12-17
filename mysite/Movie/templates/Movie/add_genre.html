@@ -1,0 +1,21 @@
+{% extends "Movie/base.html" %}
+
+{% block title %}Add new genre{% endblock %}
+{% block content %}
+
+<h1 align="left">Add new genre</h1>
+
+<div align="left">
+    <form action="/add_genre/" method="POST">
+        {% csrf_token %}
+        <ul>{{form.as_p}}</ul>
+
+        <input type="submit" name="submit" value="Save"/>
+    </form>
+</div>
+
+{%if success %}
+<h2 align="center"><font color="green">Successfully added!</font></h2>
+{%endif%}
+
+{% endblock %}
