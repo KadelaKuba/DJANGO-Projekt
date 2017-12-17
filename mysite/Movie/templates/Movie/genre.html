@@ -1,0 +1,14 @@
+{% extends "Movie/base.html" %}
+
+{% block title %}{{ genre.name }}{% endblock %}
+{% block content %}
+
+<div style="text-align:left">
+    <a href="/genres/"><==== Other genres</a>
+    <br>
+    <br>
+    <h2>{{ genre.name }}</h2>
+    <br>
+    <p><b>Description</b>: {{ genre.description }}</p>
+</div>
+{% endblock %}

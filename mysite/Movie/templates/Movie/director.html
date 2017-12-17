@@ -4,10 +4,16 @@
 {% block content %}
 
 <div style="text-align:left">
-    <a href="/directors/"><==== Other authors</a>
+    <a href="/directors/"><==== Other directors</a>
+    <br>
+    <br>
     <h2>{{ director.name }}</h2>
-    <h3>Year of birth: {{ director.year }}</h3>
+    <br>
+    <h5>Year of birth: {{ director.year }}</h5>
+    <h5>Nationality: {{ director.nationality }}</h5>
+    <h5>Height: {{ director.height }}</h5>
 </div>
+<br>
 
 <h4>Movies from this director:</h4>
 <ul>

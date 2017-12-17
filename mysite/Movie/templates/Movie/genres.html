@@ -1,0 +1,18 @@
+{% extends "Movie/base.html" %}
+
+{% block title %}Genres{% endblock %}
+{% block content %}
+<div style="text-align:left">
+    {% if all_genres %}
+    <h3>List of genres</h3>
+    <ul>
+        {% for genre in all_genres %}
+        <li><a href="/genres/{{ genre.id }}/">{{ genre.name }}</a>
+        </li>
+        {% endfor %}
+    </ul>
+    {% else %}
+    <h3>You don't have any genres in the database.</h3>
+    {% endif %}
+</div>
+{% endblock %}

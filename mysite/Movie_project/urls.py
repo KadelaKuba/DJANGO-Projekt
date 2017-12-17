@@ -13,8 +13,6 @@ Including another URLconf
     1. Import the include() function: from django.conf.urls import url, include
     2. Add a URL to urlpatterns:  url(r'^blog/', include('blog.urls'))
 """
-from django.conf.urls import url
-from django.contrib import admin
 
 from django.conf.urls import url
 from django.contrib import admin
@@ -26,15 +24,12 @@ urlpatterns = [
     url(r'^$', views.index, name='index'),
 
     url(r'^movielist/(?P<movie_id>[0-9]+)/$', views.detail, name='detail'),
-    url(r'^directors/(?P<director_id>[0-9]+)/$', views.director_detail, name='directordetail'),
     url(r'^movielist/$', views.list_all_movies, name='movielist'),
+    url(r'^directors/(?P<director_id>[0-9]+)/$', views.director_detail, name='directordetail'),
     url(r'^directors/$', views.list_all_directors, name='directors'),
+    url(r'^genres/(?P<genre_id>[0-9]+)/$', views.genre_detail, name='genredetail'),
+    url(r'^genres/$', views.list_all_genres, name='genres'),
     url(r'^add_movie/$', views.add_movie, name='addmovie'),
     url(r'^add_director/$', views.add_director, name='adddirector'),
     url(r'^add_genre/$', views.add_genre, name='addgengre'),
-
-    url(r'^search/$', views.search, name='search'),
-    url(r'^search/([a-zA-Z])/$', views.search, name='search_value'),
-
-    # url(r'^add_book$', 'add_book'),
 ]

@@ -1,0 +1,16 @@
+{% extends "Movie/base.html" %}
+
+{% block title %}Movie detail{% endblock %}
+{% block content %}
+
+<a style="" href="/movielist/"><==== Other movies</a>
+<br>
+<br>
+<h2>{{ movie.name }}</h2>
+<br>
+<h5>Director: <a href="/directors/{{ movie.director.id }}/">{{ movie.director }}</a></h5>
+<h5>Genre: {{ movie.genre }}</h5>
+<h5>Year of release: {{ movie.year }}</h5>
+<p><b>Description</b>: {{ movie.description }}</p>
+
+{% endblock %}
